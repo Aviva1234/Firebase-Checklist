@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checklist Database</title>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <center>
+      <h1>My Checklist</h1>
+      <div class="mx-auto">
+        <input type="text" id="item" />
+        <form type="submit" class="btn btn-success" onClick="addItem()">
+          Add
+        </form>
+        <button type="button" class="btn btn-danger">Delete</button>
+      </div>
+
+      <table id="table" class="table mx-auto" style="text-align: center">
+        <thead class="thead-dark">
+          <tr>
+            <th>
+              <center><h2>My Checklist</h2></center>
+            </th>
+          </tr>
+          <div id="info"></div>
+        </thead>
+      </table>
+    </center>
+  </body>
+</html>
