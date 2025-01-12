@@ -12,7 +12,32 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function addItem() {
-  const item = document.getElementById("item").value;
-  const row = "<div>" + item + "</div>";
-  document.getElementById("info").innerHTML += row;
+  var item = document.getElementById("input").value;
+  //  const row = "<div>" + item + "</div>";
+  //  document.getElementById("info").innerHTML += row;
+  firebase
+    .database()
+    .ref("/")
+    .child(item)
+    .update({ purpose: "adding message" });
+  getData();
+}
+function getData() {
+  firebase
+    .database()
+    .ref("/")
+    .on("value", function (snapshot) {
+      document.getElementById("info").innerHTML = "";
+      snapshot.forEach(function (childSnapshot) {
+        childkey = childSnapshot.key;
+        item = childkey;
+        console.log(item);
+        var row = "<div>" + item + "</div><hr>";
+        document.getElementById("info").innerHTML += row;
+      });
+    });
+}
+function removeItem() {
+  data = document.getElementById("input").value;
+  firebase.database().ref("/").child(data).remove();
 }

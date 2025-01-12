@@ -17,25 +17,19 @@
 
   <body>
     <center>
-      <h1>My Checklist</h1>
-      <div class="mx-auto">
-        <input type="text" id="item" />
-        <form type="submit" class="btn btn-success" onClick="addItem()">
-          Add
-        </form>
-        <button type="button" class="btn btn-danger">Delete</button>
+      <h1>Checklist</h1>
+      <div>
+        <label>Enter Item</label>
+        <input type="text" id="input" />
       </div>
-
-      <table id="table" class="table mx-auto" style="text-align: center">
-        <thead class="thead-dark">
-          <tr>
-            <th>
-              <center><h2>My Checklist</h2></center>
-            </th>
-          </tr>
-          <div id="info"></div>
-        </thead>
-      </table>
+      <br />
+      <button id="add" class="btn btn-success" onclick="addItem()">Add</button>
+      <button id="delete" class="btn btn-danger" onclick="removeItem()">
+        Delete
+      </button>
+      <br />
+      <h3>My Checklist</h3>
+      <div id="info"></div>
     </center>
   </body>
 </html>
